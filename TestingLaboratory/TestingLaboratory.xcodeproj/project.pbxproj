@@ -16,6 +16,15 @@
 		D287A1F52C2FD612000B8750 /* TestingLaboratoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D287A1F42C2FD612000B8750 /* TestingLaboratoryTests.swift */; };
 		D287A1FF2C2FD612000B8750 /* TestingLaboratoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D287A1FE2C2FD612000B8750 /* TestingLaboratoryUITests.swift */; };
 		D287A2012C2FD612000B8750 /* TestingLaboratoryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D287A2002C2FD612000B8750 /* TestingLaboratoryUITestsLaunchTests.swift */; };
+		D287A20F2C2FD73A000B8750 /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D287A20E2C2FD73A000B8750 /* AuthUseCase.swift */; };
+		D287A2142C2FD759000B8750 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D287A2132C2FD759000B8750 /* AuthRepository.swift */; };
+		D287A2162C2FD761000B8750 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D287A2152C2FD761000B8750 /* AuthService.swift */; };
+		D287A21A2C2FDAEF000B8750 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D287A2192C2FDAEF000B8750 /* Utils.swift */; };
+		D287A21D2C2FE337000B8750 /* AuthDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D287A21C2C2FE337000B8750 /* AuthDTO.swift */; };
+		D287A2342C308604000B8750 /* APIEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D287A2332C308604000B8750 /* APIEndPoints.swift */; };
+		D287A2372C3087A3000B8750 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D287A2362C3087A3000B8750 /* Provider.swift */; };
+		D287A23C2C3087FE000B8750 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D287A23B2C3087FE000B8750 /* EndPoint.swift */; };
+		D287A23E2C30880E000B8750 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D287A23D2C30880E000B8750 /* Requestable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,15 @@
 		D287A1FA2C2FD612000B8750 /* TestingLaboratoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestingLaboratoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D287A1FE2C2FD612000B8750 /* TestingLaboratoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingLaboratoryUITests.swift; sourceTree = "<group>"; };
 		D287A2002C2FD612000B8750 /* TestingLaboratoryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingLaboratoryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D287A20E2C2FD73A000B8750 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
+		D287A2132C2FD759000B8750 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		D287A2152C2FD761000B8750 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		D287A2192C2FDAEF000B8750 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		D287A21C2C2FE337000B8750 /* AuthDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDTO.swift; sourceTree = "<group>"; };
+		D287A2332C308604000B8750 /* APIEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoints.swift; sourceTree = "<group>"; };
+		D287A2362C3087A3000B8750 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		D287A23B2C3087FE000B8750 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		D287A23D2C30880E000B8750 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +117,10 @@
 		D287A1DC2C2FD610000B8750 /* TestingLaboratory */ = {
 			isa = PBXGroup;
 			children = (
+				D287A2122C2FD74E000B8750 /* Network */,
+				D287A2172C2FDAD0000B8750 /* Core */,
+				D287A2102C2FD73D000B8750 /* Data */,
+				D287A20D2C2FD727000B8750 /* Domain */,
 				D287A1DD2C2FD610000B8750 /* AppDelegate.swift */,
 				D287A1DF2C2FD610000B8750 /* SceneDelegate.swift */,
 				D287A1E12C2FD610000B8750 /* ViewController.swift */,
@@ -125,6 +147,75 @@
 				D287A2002C2FD612000B8750 /* TestingLaboratoryUITestsLaunchTests.swift */,
 			);
 			path = TestingLaboratoryUITests;
+			sourceTree = "<group>";
+		};
+		D287A20D2C2FD727000B8750 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D287A20E2C2FD73A000B8750 /* AuthUseCase.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D287A2102C2FD73D000B8750 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D287A21B2C2FE32C000B8750 /* DTO */,
+				D287A2112C2FD748000B8750 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D287A2112C2FD748000B8750 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				D287A2132C2FD759000B8750 /* AuthRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		D287A2122C2FD74E000B8750 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D287A23A2C3087F4000B8750 /* EndPoint */,
+				D287A2352C308794000B8750 /* Provider */,
+				D287A2152C2FD761000B8750 /* AuthService.swift */,
+				D287A2332C308604000B8750 /* APIEndPoints.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D287A2172C2FDAD0000B8750 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D287A2192C2FDAEF000B8750 /* Utils.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D287A21B2C2FE32C000B8750 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				D287A21C2C2FE337000B8750 /* AuthDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		D287A2352C308794000B8750 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				D287A2362C3087A3000B8750 /* Provider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		D287A23A2C3087F4000B8750 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				D287A23B2C3087FE000B8750 /* EndPoint.swift */,
+				D287A23D2C30880E000B8750 /* Requestable.swift */,
+			);
+			path = EndPoint;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +350,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D287A1E22C2FD610000B8750 /* ViewController.swift in Sources */,
+				D287A21D2C2FE337000B8750 /* AuthDTO.swift in Sources */,
 				D287A1DE2C2FD610000B8750 /* AppDelegate.swift in Sources */,
+				D287A2372C3087A3000B8750 /* Provider.swift in Sources */,
+				D287A23C2C3087FE000B8750 /* EndPoint.swift in Sources */,
+				D287A2342C308604000B8750 /* APIEndPoints.swift in Sources */,
 				D287A1E02C2FD610000B8750 /* SceneDelegate.swift in Sources */,
+				D287A21A2C2FDAEF000B8750 /* Utils.swift in Sources */,
+				D287A2162C2FD761000B8750 /* AuthService.swift in Sources */,
+				D287A23E2C30880E000B8750 /* Requestable.swift in Sources */,
+				D287A2142C2FD759000B8750 /* AuthRepository.swift in Sources */,
+				D287A20F2C2FD73A000B8750 /* AuthUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
