@@ -13,7 +13,7 @@ struct SignUpRequest: Encodable {
     let pw: String
 }
 
-struct SignUpResponse: Decodable {
+struct SignUpResponse: Decodable, Equatable {
     let statusCode: Int
 }
 
