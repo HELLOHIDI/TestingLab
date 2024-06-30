@@ -31,3 +31,29 @@ enum HttpMethod: String {
     case delete = "DELETE"
 }
 
+//class URLSessionProvider {
+//    let session: URLSession
+//    let baseURL = "https://www.testwebpage.com/"
+//    
+//    init(session: URLSession = URLSession.shared) {
+//        self.session = session
+//    }
+//    
+//    func dataTask(request: URLRequest, completionHandler: @escaping (Result<Data, CustomError>) -> Void) {
+//        
+//        let task = session.dataTask(with: request) { data, urlResponse, error in
+//            
+//            guard let httpResponse = urlResponse as? HTTPURLResponse,
+//                  (200...299).contains(httpResponse.statusCode) else {
+//                return completionHandler(.failure(.statusCodeError))
+//            }
+//            
+//            if let data = data {
+//                return completionHandler(.success(data))
+//            }
+//            
+//            completionHandler(.failure(.unknownError))
+//        }
+//        task.resume()
+//    }
+//}

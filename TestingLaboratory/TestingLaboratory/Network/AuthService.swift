@@ -32,15 +32,4 @@ final class DefaultAuthService: AuthService {
             dto: SignInResponse.self
         )
     }
-    
-    
 }
-
-
-
-
-
-
-
-
-

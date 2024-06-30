@@ -21,8 +21,6 @@ final class DefaultAuthRepository: AuthRepository {
     }
     
     func signUp(id: String, password: String) async throws {
-        let request = SignUpRequest(id: id, pw: password)
-        
         let response = try await authService.signUp(with: .init(id: id, pw: password))
         
         guard response.statusCode != 4001 else { throw AuthError.alreadyExistEmail }
