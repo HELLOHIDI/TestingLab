@@ -25,4 +25,8 @@ struct SignInRequest: Encodable {
 
 struct SignInResponse: Decodable {
     let statusCode: Int
+    
+    init(statusCode: Int) {
+        self.statusCode = statusCode
+    }
 }

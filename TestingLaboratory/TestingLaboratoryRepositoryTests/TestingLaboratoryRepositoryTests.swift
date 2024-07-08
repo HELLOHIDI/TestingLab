@@ -6,118 +6,121 @@
 //
 
 import XCTest
+@testable import TestingLaboratory
 
-final class TestingLaboratoryRepositoryTests: XCTestCase {
+final class AuthRepositoryTests: XCTestCase {
     
-    private var mockAuthService: AuthService!
-    private var authRepository: AuthRepository!
-    
+    var sut: AuthRepository!
+    var stub: AuthRemoteServiceStub!
+
     override func setUpWithError() throws {
-        mockAuthService = MockAuthService()
-        authRepository = DefaultAuthRepository(
-            authService: self.mockAuthService
-        )
+        stub = .init()
+        sut = DefaultAuthRepository(authService: stub)
     }
-    
+
     override func tearDownWithError() throws {
-        self.mockAuthService = nil
-        self.authRepository = nil
+        stub = nil
+        sut = nil
     }
     
-    func test_회원가입_중복이메일일때() async throws {
-        // Given
-        let id = "fbgmlwo123@naver.com"
-        let password = "dave1072!A"
-        let expectation = XCTestExpectation(description: "Sign up fails with alreadyExistEmail error")
-        
-        // When
-        Task {
-            do {
-                try await authRepository.signUp(id: id, password: password)
-                XCTFail("Expected alreadyExistEmail error but succeeded")
-            } catch AuthError.alreadyExistEmail { // 중복된 이메일인 경우
-                expectation.fulfill() // 결과에 충족한 경우
-            } catch {
-                XCTFail("Expected alreadyExistEmail error but got \(error)")
-            }
-        }
-        
-        // Then
-        await fulfillment(of: [expectation], timeout: 1.0)
-    }
-    
-    
-    func test_회원가입_성공했을때() async throws {
-        // Given
-        let id = "fbgmlwo1072@naver.com"
-        let password = "dave1072!A"
+}
 
-        // When
+//MARK: - SignUp
+extension AuthRepositoryTests {
+    func testSignUp_Success() async throws {
+        // given
+        stub.signUpResponse = .init(statusCode: 200)
+        
+        // when
+        try await sut.signUp(id: "test@example.com", password: "Password123!")
+        
+        // then
+        // No assertion needed for success case
+    }
+    
+    func testSignUp_AlreadyExistEmail() async throws {
+        // given
+        stub.signUpResponse = .init(statusCode: 4001)
+        
+        // when
         do {
-            try await authRepository.signUp(id: id, password: password)
-            // Then
-            // 에러가 발생하지 않으면 테스트 성공
+            try await sut.signUp(id: "existing@example.com", password: "Password123!")
+            XCTFail("Expected error AuthError.alreadyExistEmail not thrown")
         } catch {
-            XCTFail("Expected no error but got \(error)")
+            // then
+            XCTAssertTrue(error is AuthError)
+            XCTAssertEqual(error as? AuthError, AuthError.alreadyExistEmail)
         }
     }
     
-    func test_로그인_성공했을때() async throws {
-        // Given
-        let id = "dave2000@gmail.com"
-        let password = "aa1072!"
+    func testSignUp_OtherErrors() async throws {
+        // given
+        stub.signUpError = NSError(domain: "MockError", code: 500, userInfo: nil)
+        
+        // when
+        do {
+            try await sut.signUp(id: "test@example.com", password: "Password123!")
+            XCTFail("Expected error AuthError.unknown not thrown")
+        } catch {
+            // then
+        }
+    }
+}
 
-        // When
-        do {
-            try await authRepository.signIn(id: id, password: password)
-            // Then
-            // 에러가 발생하지 않으면 테스트 성공
-        } catch {
-            XCTFail("Expected no error but got \(error)")
+//MARK: - SignIn
+extension AuthRepositoryTests {
+        
+        func testSignIn_Success() async throws {
+            // given
+            stub.signInResponse = .init(statusCode: 200)
+            
+            // when
+            try await sut.signIn(id: "test@example.com", password: "Password123!")
+            
+            // then
+            // No assertion needed for success case
         }
-    }
-    
-    func test_비밀번호_틀렸을때() async throws {
-        let id = "dave2000@gmail.com"
-        let password = "aa1072"
         
-        let expectation = XCTestExpectation(description: "비밀번호가 올바르지 않습니다!")
-        
-        // When
-        Task {
+        func testSignIn_UserNotFound() async throws {
+            // given
+            stub.signInResponse = .init(statusCode: 404)
+            
+            // when
             do {
-                try await authRepository.signUp(id: id, password: password)
-                XCTFail("Expected notAuthorized error but succeeded")
-            } catch AuthError.alreadyExistEmail { // 중복된 이메일인 경우
-                expectation.fulfill() // 결과에 충족한 경우
+                try await sut.signIn(id: "nonexisting@example.com", password: "Password123!")
+                XCTFail("Expected error AuthError.userNotFound not thrown")
             } catch {
-                XCTFail("Expected notAuthorized error but got \(error)")
+                // then
+                XCTAssertTrue(error is AuthError)
+                XCTAssertEqual(error as? AuthError, AuthError.userNotFound)
             }
         }
         
-        // Then
-        await fulfillment(of: [expectation], timeout: 1.0)
-    }
-    
-    func test_로그인_없는유저일때() async throws {
-        let id = "dave2000@gmail.com"
-        let password = "aa1072!"
-        
-        let expectation = XCTestExpectation(description: "존재하지 않는 유저입니다!")
-        
-        // When
-        Task {
+        func testSignIn_NotAuthorized() async throws {
+            // given
+            stub.signInResponse = .init(statusCode: 401)
+            
+            // when
             do {
-                try await authRepository.signUp(id: id, password: password)
-                XCTFail("Expected userNotFound error but succeeded")
-            } catch AuthError.userNotFound { // 중복된 이메일인 경우
-                expectation.fulfill() // 결과에 충족한 경우
+                try await sut.signIn(id: "test@example.com", password: "WrongPassword123!")
+                XCTFail("Expected error AuthError.notAuthorized not thrown")
             } catch {
-                XCTFail("Expected userNotFound error but got \(error)")
+                // then
+                XCTAssertTrue(error is AuthError)
+                XCTAssertEqual(error as? AuthError, AuthError.notAuthorized)
             }
         }
         
-        // Then
-        await fulfillment(of: [expectation], timeout: 1.0)
-    }
+        func testSignIn_OtherErrors() async throws {
+            // given
+            stub.signInError = NSError(domain: "MockError", code: 500, userInfo: nil)
+            
+            // when
+            do {
+                try await sut.signIn(id: "test@example.com", password: "Password123!")
+                XCTFail("Expected error AuthError.unknown not thrown")
+            } catch {
+                // then
+            }
+        }
 }
