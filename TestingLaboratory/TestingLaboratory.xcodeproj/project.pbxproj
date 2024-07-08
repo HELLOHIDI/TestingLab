@@ -43,6 +43,7 @@
 		D287A2372C3087A3000B8750 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D287A2362C3087A3000B8750 /* Provider.swift */; };
 		D287A23C2C3087FE000B8750 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D287A23B2C3087FE000B8750 /* EndPoint.swift */; };
 		D287A23E2C30880E000B8750 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D287A23D2C30880E000B8750 /* Requestable.swift */; };
+		D289DCAA2C32A00200AF1156 /* MockAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D289DCA92C32A00200AF1156 /* MockAuthRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		D211BC9F2C31C50B00E4246B /* TestingLaboratoryRepositoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestingLaboratoryRepositoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D211BCA12C31C50B00E4246B /* TestingLaboratoryRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingLaboratoryRepositoryTests.swift; sourceTree = "<group>"; };
 		D211BCAB2C31C94600E4246B /* MockAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthService.swift; sourceTree = "<group>"; };
+		D22067172C3BA9F600984FF7 /* TestingLaboratory.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestingLaboratory.xctestplan; sourceTree = "<group>"; };
 		D287A1DA2C2FD610000B8750 /* TestingLaboratory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingLaboratory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D287A1DD2C2FD610000B8750 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D287A1DF2C2FD610000B8750 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		D287A2362C3087A3000B8750 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		D287A23B2C3087FE000B8750 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		D287A23D2C30880E000B8750 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		D289DCA92C32A00200AF1156 /* MockAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,7 @@
 		D287A1D12C2FD610000B8750 = {
 			isa = PBXGroup;
 			children = (
+				D22067172C3BA9F600984FF7 /* TestingLaboratory.xctestplan */,
 				D287A1DC2C2FD610000B8750 /* TestingLaboratory */,
 				D287A1F32C2FD612000B8750 /* TestingLaboratoryUseCaseTests */,
 				D211BCA02C31C50B00E4246B /* TestingLaboratoryRepositoryTests */,
@@ -163,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				D287A1F42C2FD612000B8750 /* TestingLaboratoryUseCaseTests.swift */,
+				D289DCA92C32A00200AF1156 /* MockAuthRepository.swift */,
 			);
 			path = TestingLaboratoryUseCaseTests;
 			sourceTree = "<group>";
@@ -409,6 +414,7 @@
 				D211BCB12C31CA2200E4246B /* AuthDTO.swift in Sources */,
 				D211BCBB2C31D55200E4246B /* EndPoint.swift in Sources */,
 				D287A1F52C2FD612000B8750 /* TestingLaboratoryUseCaseTests.swift in Sources */,
+				D289DCAA2C32A00200AF1156 /* MockAuthRepository.swift in Sources */,
 				D211BCBD2C31D57E00E4246B /* Utils.swift in Sources */,
 				D211BCB72C31D53100E4246B /* APIEndPoints.swift in Sources */,
 				D211BCB32C31CA6400E4246B /* AuthUseCase.swift in Sources */,
@@ -618,8 +624,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 27VUFHH5W2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestingLaboratory/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -634,6 +642,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hellohidi.TestingLaboratory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -645,8 +654,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 27VUFHH5W2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestingLaboratory/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -661,6 +672,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hellohidi.TestingLaboratory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
