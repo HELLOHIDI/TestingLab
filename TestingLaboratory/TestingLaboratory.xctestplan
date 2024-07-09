@@ -29,6 +29,13 @@
         "identifier" : "D211BC9E2C31C50B00E4246B",
         "name" : "TestingLaboratoryRepositoryTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:TestingLaboratory.xcodeproj",
+        "identifier" : "D220671D2C3BBBB600984FF7",
+        "name" : "TestingNetworkTests"
+      }
     }
   ],
   "version" : 1

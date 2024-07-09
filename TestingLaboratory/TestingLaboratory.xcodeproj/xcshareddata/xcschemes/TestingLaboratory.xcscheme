@@ -46,13 +46,33 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D211BC9E2C31C50B00E4246B"
                BuildableName = "TestingLaboratoryRepositoryTests.xctest"
                BlueprintName = "TestingLaboratoryRepositoryTests"
+               ReferencedContainer = "container:TestingLaboratory.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D220671D2C3BBBB600984FF7"
+               BuildableName = "TestingNetworkTests.xctest"
+               BlueprintName = "TestingNetworkTests"
+               ReferencedContainer = "container:TestingLaboratory.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D220671D2C3BBBB600984FF7"
+               BuildableName = "TestingNetworkTests.xctest"
+               BlueprintName = "TestingNetworkTests"
                ReferencedContainer = "container:TestingLaboratory.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -30,3 +30,17 @@ struct SignInResponse: Decodable {
         self.statusCode = statusCode
     }
 }
+
+struct SignInResponseNetworkTest: Decodable {
+    let statusCode: Int
+    let id: String
+    let password: String
+    let name: String
+    
+    init(statusCode: Int, id: String, password: String, name: String) {
+        self.statusCode = statusCode
+        self.id = id
+        self.password = password
+        self.name = name
+    }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "statusCode": 200,
+    "id": "user001",
+    "password": "password001",
+    "name": "김철수"
+  },
+  {
+    "statusCode": 201,
+    "id": "user002",
+    "password": "password002",
+    "name": "이영희"
+  },
+  {
+    "statusCode": 202,
+    "id": "user003",
+    "password": "password003",
+    "name": "박민수"
+  },
+  {
+    "statusCode": 200,
+    "id": "user004",
+    "password": "password004",
+    "name": "최지훈"
+  },
+  {
+    "statusCode": 203,
+    "id": "user005",
+    "password": "password005",
+    "name": "정수민"
+  },
+  {
+    "statusCode": 404,
+    "id": "user006",
+    "password": "password006",
+    "name": "김윤아"
+  },
+  {
+    "statusCode": 500,
+    "id": "user007",
+    "password": "password007",
+    "name": "한지민"
+  },
+  {
+    "statusCode": 403,
+    "id": "user008",
+    "password": "password008",
+    "name": "오세훈"
+  },
+  {
+    "statusCode": 200,
+    "id": "user009",
+    "password": "password009",
+    "name": "송하나"
+  },
+  {
+    "statusCode": 201,
+    "id": "user010",
+    "password": "password010",
+    "name": "이준석"
+  }
+]
